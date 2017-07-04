@@ -52,7 +52,8 @@ var SnakeGame = React.createClass({displayName: 'SnakeGame',
     var head = getNextIndex(snake[0], direction, numRows, numCols);
 
     if(parseInt(snake.length)>parseInt(window.localStorage.getItem("high_score"))){
-      window.localStorage.setItem("high_score",parseInt(snake.length))
+      window.localStorage.setItem("high_score",parseInt(snake.length));
+      document.getElementById("title_div").innerHTML = '<h3>Welcome to Magnetic\'s snake game!</h3><h1 style="color:green">Highscore: '+window.localStorage.getItem("high_score")+'</h1>';
     }
 
     if (snake.indexOf(head) != -1) {
