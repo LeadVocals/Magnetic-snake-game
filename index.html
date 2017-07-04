@@ -12,7 +12,7 @@
     if(window.localStorage.getItem("high_score") == null){
        window.localStorage.setItem("high_score",0);
     }
-    document.getElementById("title_div").innerHTML = '<h3>Welcome to Magnetic\'s snake game! Highscore: '+window.localStorage.getItem("high_score")+'</h3>';
+    document.getElementById("title_div").innerHTML = '<h3>Welcome to Magnetic\'s snake game!</h3><h2 style="color:red">Highscore: '+window.localStorage.getItem("high_score")+'</h2>';
   </script>
     <div id="root"></div>
     <script src="components/react/react.min.js"></script>
