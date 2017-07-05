@@ -7,7 +7,7 @@ var DIRS = {37: true, 38: true, 39: true, 40: true};
 
 var SnakeGame = React.createClass({displayName: 'SnakeGame',
   getInitialState: function() {
-    var start = this.props.startIndex || 21;
+    var start = this.props.startIndex || 1;
     var snake = [start], board = []; board[start] = BODY;
     return {
       snake: snake,
@@ -15,7 +15,7 @@ var SnakeGame = React.createClass({displayName: 'SnakeGame',
       growth: 0,
       paused: true,
       gameOver: false,
-      direction: KEYS.right
+      direction: KEYS.down
     }
   },
 
@@ -47,8 +47,8 @@ var SnakeGame = React.createClass({displayName: 'SnakeGame',
     var growth = this.state.growth;
     var direction = this.state.direction;
 
-    var numRows = this.props.numRows || 20;
-    var numCols = this.props.numCols || 20;
+    var numRows = this.props.numRows || 25;
+    var numCols = this.props.numCols || 25;
     var head = getNextIndex(snake[0], direction, numRows, numCols);
 
     if(parseInt(snake.length)>parseInt(window.localStorage.getItem("high_score"))){
@@ -102,9 +102,9 @@ var SnakeGame = React.createClass({displayName: 'SnakeGame',
 
   render: function() {
     var cells = [];
-    var numRows = this.props.numRows || 20;
-    var numCols = this.props.numCols || 20;
-    var cellSize = this.props.cellSize || 30;
+    var numRows = this.props.numRows || 25;
+    var numCols = this.props.numCols || 25;
+    var cellSize = this.props.cellSize || 15;
 
     for (var row = 0; row < numRows; row++) {
       for (var col = 0; col < numCols; col++) {
