@@ -49,8 +49,8 @@ body {
 }
 
 .body-cell, .null-cell {
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
 }
 
 .body-cell, .food-cell, .null-cell {
